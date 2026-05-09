@@ -19,6 +19,8 @@
 - expirationDate : int
 - sex : char
 -----------------------------------------
++ DACArecipient() : void
++ DACArecipient(surname:String, givenName:String, uscisNumber:String, countryOfOrigin:String, birthday:int, validFromDate:int, expirationDate:int, sex:char) : void
 + getSurname() : String
 + getGivenName() : String
 + getUscisNumber() : String
@@ -74,6 +76,48 @@ public class DACArecipient
   private String countryOfOrigin;
   private int birthday, validFromDate, expirationDate;
   private char sex;
+
+	/***** CONSTRUCTORS *****/
+	/**
+	 * Default Constructor
+	 * Initializes all instance variables to default values
+	 */
+	public DACArecipient()
+	{
+		this.surname = "Unknown";
+		this.givenName = "Unknown";
+		this.uscisNumber = "Unknown";
+		this.countryOfOrigin = "Unknown";
+		this.birthday = 2415021;
+		this.validFromDate = 2415021;
+		this.expirationDate = 2415021;
+		this.sex = 'X';
+	}
+
+	/**
+	 * Full Constructor
+	 * Initializes all instance variables with the provided values
+	 * 
+	 * @param surname the surname of the DACA recipient
+	 * @param givenName the given name of the DACA recipient
+	 * @param uscisNumber the USCIS number of the DACA recipient
+	 * @param countryOfOrigin the country of origin of the DACA recipient
+	 * @param birthday the birthday as a Julian Day Number
+	 * @param validFromDate the valid from date as a Julian Day Number
+	 * @param expirationDate the expiration date as a Julian Day Number
+	 * @param sex the sex of the DACA recipient
+	 */
+	public DACArecipient(String surname, String givenName, String uscisNumber, String countryOfOrigin, int birthday, int validFromDate, int expirationDate, char sex)
+	{
+		this.surname = surname;
+		this.givenName = givenName;
+		this.uscisNumber = uscisNumber;
+		this.countryOfOrigin = countryOfOrigin;
+		this.birthday = birthday;
+		this.validFromDate = validFromDate;
+		this.expirationDate = expirationDate;
+		this.sex = sex;
+	}
 
 	/***** ACCESSORS *****/
 	public String getSurname()
